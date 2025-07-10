@@ -169,4 +169,56 @@ A candlestick is made up of **four prices** for a period:
 
 ---
 
-If you want visual examples of any specific pattern, or how to use candlesticks in a coding or charting tool, **just ask!**
+In a candlestick chart, each “candle” actually encodes **four** prices over the period:
+
+* **Open**: the first trade price of the period
+* **High**: the maximum trade price
+* **Low**: the minimum trade price
+* **Close**: the last trade price of the period
+
+When you “plot candles,” the **body** of the candle is drawn between the **open** and the **close**:
+
+* If **close > open**, the candle is typically colored green (bullish)—price went up over the period.
+* If **close < open**, it’s colored red (bearish)—price went down.
+
+The **closing price** is chosen for two main reasons:
+
+1. **It’s the most meaningful end‐of‐period signal.**
+   The close incorporates all information and trading activity during that interval, and it’s the price at which most technical indicators (moving averages, RSI, Bollinger Bands, etc.) are calculated.
+
+2. **It determines the candle’s color and body size.**
+   The difference between open and close makes up the solid “body.” The length and direction of that body visually tell you whether buyers (bulls) or sellers (bears) were in control as the period ended.
+
+When you see code that supplies a `Close` series to a plotting function, it’s because:
+
+* The underlying function needs **all four** OHLC series to draw each candle.
+* But in many libraries (e.g. `mpl_finance.candlestick_ohlc` or Plotly’s `go.Candlestick`), you’ll pass the `close=` array explicitly so the chart knows where to draw the top or bottom of the body and how to color it.
+
+In short, the **closing price** is central to both the calculation of most indicators **and** the visual cue (body color) that tells you if price finished above or below where it started.
+
+---
+
+In a candlestick chart, **each “candle” represents one fixed time interval**—that interval is set by the chart’s time-frame. Common choices include:
+
+* **Intraday intervals:**
+
+  * 1-minute
+  * 5-minute
+  * 15-minute
+  * 30-minute
+  * 60-minute (1-hour)
+
+* **Multi-hour intervals:**
+
+  * 2-hour
+  * 4-hour
+
+* **Daily and longer:**
+
+  * Daily (1 trading day per candle)
+  * Weekly (1 week per candle)
+  * Monthly (1 calendar month per candle)
+
+> **Example:** On a 5-minute chart, each candlestick shows the open, high, low and close prices over that 5-minute span. On a daily chart, each candle does the same for one trading day.
+
+You can typically switch between these time-frames in your charting platform to see price action at different granularities.

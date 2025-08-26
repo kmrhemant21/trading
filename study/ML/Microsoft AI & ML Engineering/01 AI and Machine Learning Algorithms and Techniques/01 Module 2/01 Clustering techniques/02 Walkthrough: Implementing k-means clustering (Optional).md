@@ -31,6 +31,18 @@ data = {'AnnualIncome': [
         30, 30.5, 31, 31.5, 32, 32.5, 33, 33.5, 34, 34.5, 
         35,   # Normal points
         80, 85, 90  # Outliers
+    ],
+    'SpendingScore': [
+        39, 42, 45, 48, 51, 54, 57, 60, 63, 66,
+        69, 72, 75, 78, 81, 84, 87, 90, 93, 96,
+        6, 9, 12, 15, 18, 21, 24, 27, 30, 33,
+        5, 8, 11, 14, 17, 20, 23, 26, 29, 32,
+        56,   # Normal points
+        2, 3, 100  # Outliers
+    ]}
+
+df = pd.DataFrame(data)
+print(df.head())
 ```
 
 This dataset consists of:
@@ -42,10 +54,6 @@ This dataset consists of:
 ### Step 2. Preprocessing the data
 
 Since k-means is sensitive to the scale of the features, we used StandardScaler to normalize the data. Scaling ensures that all features contribute equally to the clustering process.
-
-```
-123456789
-```
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -65,10 +73,6 @@ In this step, both AnnualIncome and SpendingScore are standardized, meaning that
 
 We initialized the k-means algorithm with a predefined number of clusters (k = 3) and applied it to the normalized dataset. The algorithm assigned each data point to a cluster based on its proximity to the cluster centroid.
 
-```
-123456789101112
-```
-
 ```python
 from sklearn.cluster import KMeans
 
@@ -79,6 +83,9 @@ kmeans = KMeans(n_clusters=k, random_state=42)
 # Fit the model and predict cluster labels
 kmeans.fit(df_scaled)
 df['Cluster'] = kmeans.labels_
+
+# Display the first few rows with cluster assignments
+print(df.head())
 ```
 
 The Cluster column in the DataFrame now contains the cluster label assigned to each data point. Data points in the same cluster have similar AnnualIncome and SpendingScore characteristics.
@@ -86,10 +93,6 @@ The Cluster column in the DataFrame now contains the cluster label assigned to e
 ### Step 4. Visualizing the clusters
 
 To better understand the results, we plotted the clusters using a scatterplot, with different colors representing different clusters. The x-axis represents AnnualIncome, and the y-axis represents SpendingScore.
-
-```
-12345678
-```
 
 ```python
 import matplotlib.pyplot as plt
@@ -108,10 +111,6 @@ This plot visually shows how the customers were grouped into clusters. You can o
 
 To find the optimal number of clusters, we applied the elbow method, which helps identify the point where adding more clusters no longer significantly improves the clustering performance. This is done by calculating the within-cluster sum of squares (WCSS) for different values of k.
 
-```
-12345678910111213
-```
-
 ```python
 # Calculate the WCSS for different values of k
 wcss = []
@@ -123,6 +122,9 @@ for i in range(1, 11):
 # Plot the WCSS to visualize the Elbow
 plt.plot(range(1, 11), wcss, marker='o')
 plt.title('Elbow Method for Optimal k')
+plt.xlabel('Number of Clusters')
+plt.ylabel('WCSS')
+plt.show()
 ```
 
 In the elbow plot, the x-axis represents the number of clusters (k), and the y-axis represents the WCSS. The "elbow" point is the value of k where the reduction in WCSS starts to slow down. In this case, you may observe an elbow around k = 3 or k = 4, indicating that these values are optimal for this dataset.

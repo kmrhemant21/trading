@@ -1,0 +1,2 @@
+symbol,direction,entry_time,entry_price,stop_init,exit_time,exit_price,pnl,r_multiple,partial_taken
+3MINDIA.NS,long,2025-08-07 13:20:00,30160.0725,30174.4286,2025-08-07 14:15:00,30959.5125,556853.21,55.69,False

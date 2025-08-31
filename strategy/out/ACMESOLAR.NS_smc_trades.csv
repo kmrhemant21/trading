@@ -1,0 +1,2 @@
+symbol,direction,entry_time,entry_price,stop_init,exit_time,exit_price,pnl,r_multiple,partial_taken
+ACMESOLAR.NS,short,2025-08-20 12:00:00,288.9055,289.0000,2025-08-20 12:05:00,289.1445,-25286.72,-2.53,False

@@ -91,10 +91,10 @@ The agent will use an epsilon-greedy policy to balance exploration and exploitat
 
 ```python
 def epsilon_greedy_action(Q_table, state, epsilon):
-        if np.random.uniform(0, 1) < epsilon:
-                return np.random.randint(0, n_actions)  # Explore: random action
-        else:
-                return np.argmax(Q_table[state])  # Exploit: action with highest Q-value
+    if np.random.uniform(0, 1) < epsilon:
+            return np.random.randint(0, n_actions)  # Explore: random action
+    else:
+            return np.argmax(Q_table[state])  # Exploit: action with highest Q-value
 ```
 
 #### Step 5: Update the Q-values
@@ -103,15 +103,19 @@ Use the Bellman equation to update the Q-values based on the current state, the 
 
 ```python
 for episode in range(1000):
-        state = np.random.randint(0, grid_size * grid_size)  # Start in a random state
-        done = False
-        while not done:
-                action = epsilon_greedy_action(Q_table, state, epsilon)
-                next_state = np.random.randint(0, grid_size * grid_size)  # Simulated next state
-                reward = rewards[next_state]
+    state = np.random.randint(0, grid_size * grid_size)  # Start in a random state
+    done = False
+    while not done:
+        action = epsilon_greedy_action(Q_table, state, epsilon)
+        next_state = np.random.randint(0, grid_size * grid_size)  # Simulated next state
+        reward = rewards[next_state]
 
-                # Update Q-value using Bellman equation
-                Q_table[state, action] = Q_table[state, action] + alpha * (reward + gamma * np.max(Q_table[next_state]) -
+        # Update Q-value using Bellman equation
+        Q_table[state, action] = Q_table[state, action] + alpha * (reward + gamma * np.max(Q_table[next_state]) - Q_table[state, action])
+
+        state = next_state
+        if next_state == 24 or next_state == 12:
+            done = True
 ```
 
 ## Implement policy gradients
@@ -132,9 +136,12 @@ n_states = grid_size * grid_size  # Number of states in the grid
 n_actions = 4  # Up, down, left, right
 
 model = tf.keras.Sequential([
-        tf.keras.layers.Dense(24, activation='relu', input_shape=(n_states,)),
-        tf.keras.layers.Dense(n_actions, activation='softmax')  # Output action probabilities
+    tf.keras.layers.Dense(24, activation='relu', input_shape=(n_states,)),
+    tf.keras.layers.Dense(n_actions, activation='softmax')  # Output action probabilities
 ])
+
+# Optimizer for policy network updates
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.01)
 ```
 
 #### Step 2: Select an action
@@ -143,9 +150,9 @@ For each state, the agent selects an action based on the probabilities output by
 
 ```python
 def get_action(state):
-        state_input = tf.one_hot(state, n_states)  # One-hot encoding for state
-        action_probs = model(state_input[np.newaxis, :])
-        return np.random.choice(n_actions, p=action_probs.numpy()[0])
+    state_input = tf.one_hot(state, n_states)  # One-hot encoding for state
+    action_probs = model(state_input[np.newaxis, :])
+    return np.random.choice(n_actions, p=action_probs.numpy()[0])
 ```
 
 #### Step 3: Simulate the environment

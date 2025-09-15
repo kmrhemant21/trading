@@ -109,6 +109,7 @@ Fine-tune the model in an environment equipped with GPU/TPU resources. We will u
 ```python
 from datasets import Dataset
 
+
 # Convert DataFrame to Hugging Face Dataset
 train_dataset = Dataset.from_pandas(train_data)
 val_dataset = Dataset.from_pandas(val_data)
@@ -118,18 +119,17 @@ test_dataset = Dataset.from_pandas(test_data)
 def tokenize_function(examples):
     return tokenizer(examples["cleaned_text"], padding="max_length", truncation=True, max_length=128)
 
-# Tokenize the datasets
+# Tokenize the dataset
 train_dataset = train_dataset.map(tokenize_function, batched=True)
 val_dataset = val_dataset.map(tokenize_function, batched=True)
 test_dataset = test_dataset.map(tokenize_function, batched=True)
 
 # Remove unnecessary columns
-columns_to_remove = ["text", "cleaned_text"]
-train_dataset = train_dataset.remove_columns(columns_to_remove)
-val_dataset = val_dataset.remove_columns(columns_to_remove)
-test_dataset = test_dataset.remove_columns(columns_to_remove)
+train_dataset = train_dataset.remove_columns(["text", "cleaned_text"])
+val_dataset = val_dataset.remove_columns(["text", "cleaned_text"])
+test_dataset = test_dataset.remove_columns(["text", "cleaned_text"])
 
-# Convert labels to integers if necessary
+# Convert labels to int if they are not already
 train_dataset = train_dataset.map(lambda x: {"label": int(x["label"])})
 val_dataset = val_dataset.map(lambda x: {"label": int(x["label"])})
 test_dataset = test_dataset.map(lambda x: {"label": int(x["label"])})

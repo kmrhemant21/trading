@@ -1,0 +1,2 @@
+Ticker,Date,Close,EMA50,WR14,CCI20,Notes
+ZENSARTECH.NS,2025-09-19,846.45,808.0233,-21.24,148.5,Uptrend; %R<-80 then >-50; CCI<-100 then >=-100

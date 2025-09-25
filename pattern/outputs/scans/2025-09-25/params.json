@@ -1,0 +1,21 @@
+{
+  "USE_RSI": true,
+  "USE_MACD": false,
+  "USE_ADX": false,
+  "USE_SMA": true,
+  "USE_BB": true,
+  "RSI_LEN": 21,
+  "RSI_LONG_MIN": 55,
+  "RSI_SHORT_MAX": 50,
+  "MACD_FAST": 12,
+  "MACD_SLOW": 26,
+  "MACD_SIGNAL": 9,
+  "MACD_MODE": "hist_above0",
+  "ADX_LEN": 14,
+  "ADX_MIN": 20,
+  "SMA_FAST": 10,
+  "SMA_SLOW": 50,
+  "BB_LEN": 20,
+  "BB_STD": 2.0,
+  "BB_SQUEEZE_PCTL": 10
+}

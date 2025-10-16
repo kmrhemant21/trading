@@ -1,0 +1,28 @@
+===========================================================================================================================================================================
+[12:36:37] === Parameters (signal-only) ===
+[12:36:37]   Capacity MAX_POSITIONS=4, Start capital=200,000
+[12:36:37]   Eligibility filter=True (within 50% & >SMA200)
+[12:36:37]   Entry bundle: MACD↑ + W%R↑(from -80) + hist>0 & rising
+[12:36:37]   Exit: WR/MACD gate (OR=True, cross=True), StopLoss=4.0%
+[12:36:37]   Fees=True, Slippage=10bps
+[12:36:37] === Simulating TRAIN (2015-01-01..2019-12-31) ===
+[12:37:14] TRAIN trades: 195
+[12:37:14] Final TRAIN metrics: {'trades': 195, 'win_rate_pct': 31.794871794871796, 'profit_factor': 0.6815208963677264, 'sharpe': -0.9643772457390858, 'cagr_pct': -13.902847270603413, 'max_dd_pct': -55.60689810986707}
+[12:37:14] === Simulating TEST (2020-01-01..2025-08-01) ===
+[12:38:03] TEST trades: 341
+[12:38:03] Final TEST metrics: {'trades': 341, 'win_rate_pct': 33.13782991202346, 'profit_factor': 0.6557132646745637, 'sharpe': -1.498846840834434, 'cagr_pct': -14.584139896767102, 'max_dd_pct': -62.95598437922403}
+[12:38:03] === Writing CSVs ===
+===========================================================================================================================================================================
+[12:55:10] === Parameters (signal-only) ===
+[12:55:10]   Capacity MAX_POSITIONS=4, Start capital=200,000
+[12:55:10]   Eligibility filter=True (within 50% & >SMA200)
+[12:55:10]   Entry bundle: MACD↑ + W%R↑(from -80) + hist>0 & rising +RSI
+[12:55:10]   Exit: WR/MACD gate (OR=True, cross=True), StopLoss=4.0%
+[12:55:10]   Fees=True, Slippage=10bps
+[12:55:10] === Simulating TRAIN (2015-01-01..2019-12-31) ===
+[12:55:49] TRAIN trades: 89
+[12:55:49] Final TRAIN metrics: {'trades': 89, 'win_rate_pct': 24.719101123595507, 'profit_factor': 0.408444823989064, 'sharpe': -1.0288386678160968, 'cagr_pct': -12.589217553537967, 'max_dd_pct': -51.07203288148672}
+[12:55:49] === Simulating TEST (2020-01-01..2025-08-01) ===
+[12:56:44] TEST trades: 133
+[12:56:44] Final TEST metrics: {'trades': 133, 'win_rate_pct': 30.075187969924812, 'profit_factor': 0.5084689945646413, 'sharpe': -1.2388949367966573, 'cagr_pct': -7.258048986532605, 'max_dd_pct': -36.50813750886983}
+[12:56:44] === Writing CSVs ===

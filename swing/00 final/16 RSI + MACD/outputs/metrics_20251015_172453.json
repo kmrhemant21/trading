@@ -1,0 +1,9 @@
+{
+  "start_equity_inr": 500000.0,
+  "final_equity_inr": 400194.5014028625,
+  "cagr_pct": -2.274957878748274,
+  "sharpe": -0.48161983202786923,
+  "max_drawdown_pct": -35.562110263445035,
+  "win_rate_pct": 31.330472103004293,
+  "n_trades": 233
+}

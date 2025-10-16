@@ -1,0 +1,2 @@
+action,ticker,signal_date,planned_exec_date,reason,suggest_qty,ref_price_signal,alloc_inr,rsi,adx,ema_fast,ema_slow,ema_htf,volar
+BUY,DIXON.NS,2025-10-07,2025-10-08,RSI↑35; EMA10>EMA50; Close>EMA200; ADX>25; 52w%=91.0% (>= 50%); VOLAR rank 1/1 (VOLAR=1.23); MVO weight=100.0% of capped cash (25%),2,17232.0,34464.0,37.01183431952663,33.6100653653617,17079.11305043049,17053.735511457413,15611.538425880859,1.2315832696153204

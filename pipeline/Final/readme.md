@@ -1,10 +1,3 @@
-Got it ✅ — you want a **modular pipeline** for a **swing trading bot** (Indian stock market, NSE/BSE).
-Think of this as a series of **decision stages**, where each stage either *filters*, *confirms*, or *executes*.
-
-Here’s a **well-structured pipeline design**:
-
----
-
 # 🔄 Swing Trading Bot Pipeline – Stage Design
 
 ### **Stage 1: Data Ingestion**
@@ -42,9 +35,7 @@ Here’s a **well-structured pipeline design**:
 ### **Stage 3: Screening / Filtering**
 
 * Narrow down universe of 1500+ NSE stocks → 20–50 candidates.
-
   * Example filters:
-
     * Liquidity filter: avg daily volume > 5 lakh shares.
     * Price filter: ₹50 < stock < ₹2000.
     * Trend filter: 20-DMA > 50-DMA (uptrend).

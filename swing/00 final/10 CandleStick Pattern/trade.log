@@ -1,0 +1,43 @@
+RSI + candle
+{
+  "start_equity_inr": 500000.0,
+  "final_equity_inr": 2161080.549108425,
+  "cagr_pct": 17.715257061110368,
+  "sharpe": 1.444217727342718,
+  "max_drawdown_pct": -17.02300223052084,
+  "win_rate_pct": 42.391304347826086,
+  "n_trades": 1840
+}
+
+MACD + candle
+{
+  "start_equity_inr": 500000.0,
+  "final_equity_inr": 1469380.0709551899,
+  "cagr_pct": 12.76258550926459,
+  "sharpe": 1.1224205821374738,
+  "max_drawdown_pct": -23.20101696645589,
+  "win_rate_pct": 42.13483146067416,
+  "n_trades": 1958
+}
+
+BB + candle
+{
+  "start_equity_inr": 500000.0,
+  "final_equity_inr": 2077216.9517191688,
+  "cagr_pct": 17.197262174244663,
+  "sharpe": 1.4375650362830208,
+  "max_drawdown_pct": -19.191497658090313,
+  "win_rate_pct": 42.11663066954643,
+  "n_trades": 1852
+}
+
+ADX + candle
+{
+  "start_equity_inr": 500000.0,
+  "final_equity_inr": 1883140.051981859,
+  "cagr_pct": 15.92333348645778,
+  "sharpe": 1.377479084387481,
+  "max_drawdown_pct": -33.779809761227966,
+  "win_rate_pct": 42.95415959252971,
+  "n_trades": 1767
+}

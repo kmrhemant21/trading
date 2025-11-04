@@ -1,3 +1,0 @@
-timestamp_ist,ticker,action,price,rsi,reason,first_green_open,first_green_high,first_green_low,first_green_close,second_green_open,second_green_high,second_green_low,second_green_close,position_id
-2025-09-18 12:00:00,AEGISLOG.NS,ENTRY,787.5,46.76250779404403,RSI<25 then 2↑ green; 2nd OHLC > 1st,785.2000122070312,786.7999877929688,784.4500122070312,786.0,785.9500122070312,787.5,785.9500122070312,787.5,1
-2025-09-18 12:00:00,AEGISLOG.NS,ENTRY,787.5,46.76250779404403,RSI<25 then 2↑ green; 2nd OHLC > 1st,785.2000122070312,786.7999877929688,784.4500122070312,786.0,785.9500122070312,787.5,785.9500122070312,787.5,1

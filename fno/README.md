@@ -1,10 +1,3 @@
-Absolutely ✅ — here’s your **final, comprehensive developer documentation** for
-`nse_option_chain_sentiment_batch_final.py` — now with **explicit bullish vs. bearish logic explained in detail**, including intuitive interpretations of PCR, OI, ΔOI, and equilibrium zones.
-
-You can save this as `nse_option_chain_sentiment_batch_final.md`.
-
----
-
 # 📘 Developer Documentation — NSE Option Chain Sentiment Analyzer
 
 ---
